@@ -80,12 +80,12 @@
       background-color: #00589c;
     }
 
-    /* Style for the about me page */
-    #about-me {
+    /* Style for the dropdown content */
+    .dropdown-content {
       display: none;
     }
 
-    #about-me.active {
+    .dropdown-content.active {
       display: block;
     }
   </style>
@@ -97,15 +97,6 @@
       <h1>Mediconnect Internship Opportunities</h1>
     </div>
   </header>
-
-  <section id="about">
-    <div class="container">
-      <h2>About Mediconnect</h2>
-      <p>Mediconnect is a leading healthcare technology company dedicated to improving patient care through innovative solutions.</p>
-      <!-- Adding a link to the "About Me" section -->
-      <p><a href="#" onclick="toggleAboutMe()">About the company</a></p>
-    </div>
-  </section>
 
   <section id="internships">
     <div class="container">
@@ -137,12 +128,9 @@
     </div>
   </section>
 
-  <section id="about-me" class="container">
-    <!-- About Me section, to be displayed when clicked -->
+  <section id="about-company" class="dropdown-content container">
     <h2>About the Company</h2>
-    <p>Mediconnect is a healthcare technology company specializing in providing innovative solutions to improve patient care. Our mission is to revolutionize the healthcare industry through cutting-edge technology and a commitment to excellence.</p>
-    <p>Founded in 2010, Mediconnect has since established itself as a leader in the field, working closely with healthcare providers to streamline processes, enhance efficiency, and ultimately deliver better outcomes for patients.</p>
-    <p>Our team consists of talented individuals from diverse backgrounds, all united by a passion for using technology to make a positive impact on people's lives. Whether it's developing groundbreaking software or implementing innovative systems, we are dedicated to pushing the boundaries of what's possible in healthcare.</p>
+    <p>Mediconnect is a leading healthcare technology company dedicated to improving patient care through innovative solutions.</p>
   </section>
 
   <footer>
@@ -151,14 +139,13 @@
     </div>
   </footer>
 
-  <!-- JavaScript to toggle visibility of About Me section -->
+  <!-- JavaScript to toggle visibility of dropdown content -->
   <script>
-    function toggleAboutMe() {
-      var aboutMeSection = document.getElementById('about-me');
-      aboutMeSection.classList.toggle('active');
+    function toggleDropdown(id) {
+      var dropdownContent = document.getElementById(id);
+      dropdownContent.classList.toggle('active');
     }
   </script>
 </body>
 
 </html>
-
