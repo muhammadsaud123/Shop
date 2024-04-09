@@ -454,17 +454,55 @@
     </script>
 </section>
     <section id="timeline">
-        <h2>Timeline</h2>
-        <p>Here is a timeline of key events in the history of Mediconnect:</p>
-        <ul>
-            <li><strong>2020:</strong> Mediconnect founded.</li>
-            <li><strong>2021:</strong> Secured first round of funding from venture capitalists.</li>
-            <li><strong>2022:</strong> Launched first healthcare data analysis software.</li>
-            <li><strong>2023:</strong> Expanded services to include telemedicine solutions.</li>
-            <li><strong>2024:</strong> Entered into strategic partnership with major hospital networks.</li>
-            <li><strong>2025:</strong> Planned launch of AI-powered healthcare assistant.</li>
+     <h2>Timeline</h2>
+    <div id="workflow">
+        <h3>Group Meetings</h3>
+        <ul class="date-list">
+            <li data-date="Thu 2/8/24"><strong>1st meeting:</strong> Thu 2/8/24</li>
+            <li data-date="Tue 2/13/24"><strong>2nd meeting:</strong> Tue 2/13/24</li>
+            <li data-date="Tue 2/20/24"><strong>3rd meeting:</strong> Tue 2/20/24</li>
+            <li data-date="Wed 2/28/24"><strong>4th meeting:</strong> Wed 2/28/24</li>
+            <li data-date="Tue 3/19/24"><strong>5th meeting:</strong> Tue 3/19/24</li>
+            <li data-date="Tue 3/26/24"><strong>6th meeting:</strong> Tue 3/26/24</li>
+            <li data-date="Tue 4/2/24"><strong>7th meeting:</strong> Tue 4/2/24</li>
+            <li data-date="Tue 4/9/24"><strong>8th meeting:</strong> Tue 4/9/24</li>
+            <li data-date="Tue 4/16/24"><strong>9th meeting:</strong> Tue 4/16/24</li>
+            <li data-date="Tue 4/23/24"><strong>Final meeting:</strong> Tue 4/23/24</li>
         </ul>
-    </section>
+        <h3>Mediconnect Logo</h3>
+        <ul class="date-list">
+            <li data-date="Thu 2/8/24"><strong>1st design:</strong> Thu 2/8/24</li>
+            <li data-date="Tue 2/13/24"><strong>2nd design:</strong> Tue 2/13/24</li>
+            <li data-date="Wed 2/28/24"><strong>3rd design:</strong> Wed 2/28/24</li>
+            <li data-date="Tue 3/5/24"><strong>4th design (Final Design):</strong> Tue 3/5/24</li>
+        </ul>
+        <h3>Company and Team Profile</h3>
+        <ul class="date-list">
+            <li data-date="Tue 2/13/24"><strong>1st profile:</strong> Tue 2/13/24</li>
+            <li data-date="Tue 2/20/24"><strong>2nd profile:</strong> Tue 2/20/24</li>
+            <li data-date="Wed 2/28/24"><strong>3rd profile:</strong> Wed 2/28/24</li>
+            <li data-date="Tue 3/5/24"><strong>4th profile:</strong> Tue 3/5/24</li>
+            <li data-date="Tue 3/19/24"><strong>5th profile (Final):</strong> Tue 3/19/24</li>
+        </ul>
+        <h3>Presentation</h3>
+        <ul class="date-list">
+            <li data-date="Tue 3/19/24"><strong>Powerpoint background 1st draft:</strong> Tue 3/19/24</li>
+            <li data-date="Tue 3/26/24"><strong>Powerpoint draft 2:</strong> Tue 3/26/24</li>
+            <li data-date="Tue 4/2/24"><strong>Powerpoint draft 3:</strong> Tue 4/2/24</li>
+            <li data-date="Tue 4/9/24"><strong>Powerpoint Final draft:</strong> Tue 4/9/24</li>
+        </ul>
+        <!-- Add more sections similarly -->
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.date-list li').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var date = this.getAttribute('data-date');
+            alert('Tasks for ' + date + ': ' + this.innerText);
+        });
+    });
+</script>
     <footer>
         <p>&copy; 2024 Mediconnect. All rights reserved.</p>
     </footer>
