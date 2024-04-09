@@ -1,79 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mediconnect</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-  }
-  header {
-    background-color: #6a0dad;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  nav {
-    background-color: #4b0082;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-  }
-  section {
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #fff;
-  }
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediconnect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #6a0dad;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #4b0082;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        /* Section styles */
+        section {
+            display: none;
+            padding: 40px 20px;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        section h2 {
+            color: #6a0dad;
+            text-align: center;
+        }
+
+        section p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Form styles */
+        form {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4b0082;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Mediconnect</h1>
-    <p>Your gateway to healthcare solutions</p>
-  </header>
-  <nav>
-    <a href="#about">About</a> |
-    <a href="#services">Services</a> |
-    <a href="#team">Team</a> |
-    <a href="#careers">Careers</a>
-  </nav>
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Welcome to Mediconnect. We are dedicated to revolutionizing healthcare through innovative technology solutions.</p>
-  </section>
-  <section id="services">
-    <h2>What We Provide</h2>
-    <p>At Mediconnect, we offer cutting-edge solutions in healthcare data analysis, software development, and more.</p>
-  </section>
-  <section id="team">
-    <h2>Meet the Team</h2>
-    <p>Our team consists of experienced professionals passionate about improving healthcare worldwide.</p>
-  </section>
-  <section id="careers">
-    <h2>Careers</h2>
-    <h3>Internship Opportunities</h3>
-    <p>We currently have openings for:</p>
-    <ul>
-      <li>Project Manager Internship</li>
-      <li>Frontend Development Internship</li>
-      <li>Backend Development Internship</li>
-    </ul>
-  </section>
-  <section id="data-analysis">
-    <h2>Data Analysis</h2>
-    <p>Unlock the power of data with our advanced analytics solutions tailored for healthcare providers.</p>
-  </section>
-  <footer>
-    <p>&copy; 2024 Mediconnect. All rights reserved.</p>
-  </footer>
+    <header>
+        <h1>Mediconnect</h1>
+        <p>Your gateway to healthcare solutions</p>
+    </header>
+    <nav>
+        <a href="#" onclick="toggleSection('about')">About</a>
+        <a href="#" onclick="toggleSection('services')">Services</a>
+        <a href="#" onclick="toggleSection('team')">Team</a>
+        <a href="#" onclick="toggleSection('careers')">Careers</a>
+        <a href="#" onclick="toggleSection('data-analysis')">Data Analysis</a>
+    </nav>
+    <section id="about" class="active">
+        <h2>About Us</h2>
+        <p>Welcome to Mediconnect. We are dedicated to revolutionizing healthcare through innovative technology solutions.</p>
+    </section>
+    <section id="services">
+        <h2>What We Provide</h2>
+        <p>At Mediconnect, we offer cutting-edge solutions in healthcare data analysis, software development, and more.</p>
+    </section>
+    <section id="team">
+        <h2>Meet the Team</h2>
+        <p>Our team consists of experienced professionals passionate about improving healthcare worldwide.</p>
+    </section>
+    <section id="careers">
+        <h2>Careers</h2>
+        <p>Explore exciting internship opportunities at Mediconnect.</p>
+        <div id="internship-details">
+            <form>
+                <label for="job-title">Job Title</label>
+                <input type="text" id="job-title" name="job-title">
+
+                <label for="job-description">Job Description</label>
+                <textarea id="job-description" name="job-description"></textarea>
+
+                <label for="resume">Upload Resume</label>
+                <input type="file" id="resume" name="resume">
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+    <section id="data-analysis">
+        <h2>Data Analysis</h2>
+        <p>Unlock the power of data with our advanced analytics solutions tailored for healthcare providers.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Mediconnect. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
