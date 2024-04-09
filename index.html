@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,48 +13,61 @@
       margin: 0;
       padding: 0;
     }
+
     .container {
       width: 80%;
       margin: 0 auto;
       padding: 20px;
     }
+
     header {
       background-color: #0071bc;
       color: white;
       padding: 20px 0;
       text-align: center;
     }
+
     header h1 {
       margin: 0;
       font-size: 36px;
     }
+
     footer {
       background-color: #f4f4f4;
       padding: 20px 0;
       text-align: center;
     }
+
     footer p {
       margin: 0;
     }
+
     section {
       padding: 20px 0;
     }
+
     .job {
       margin-bottom: 40px;
     }
-    h2, h3 {
+
+    h2,
+    h3 {
       color: #0071bc;
     }
+
     p {
       line-height: 1.6;
     }
+
     label {
       display: block;
       margin-bottom: 5px;
     }
+
     input[type="file"] {
       margin-bottom: 10px;
     }
+
     input[type="submit"] {
       background-color: #0071bc;
       color: white;
@@ -61,11 +75,22 @@
       padding: 10px 20px;
       cursor: pointer;
     }
+
     input[type="submit"]:hover {
       background-color: #00589c;
     }
+
+    /* Style for the about me page */
+    #about-me {
+      display: none;
+    }
+
+    #about-me.active {
+      display: block;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -77,6 +102,8 @@
     <div class="container">
       <h2>About Mediconnect</h2>
       <p>Mediconnect is a leading healthcare technology company dedicated to improving patient care through innovative solutions.</p>
+      <!-- Adding a link to the "About Me" section -->
+      <p><a href="#" onclick="toggleAboutMe()">About the company</a></p>
     </div>
   </section>
 
@@ -110,10 +137,27 @@
     </div>
   </section>
 
+  <section id="about-me" class="container">
+    <!-- About Me section, to be displayed when clicked -->
+    <h2>About the Company</h2>
+    <p>Mediconnect is a healthcare technology company specializing in providing innovative solutions to improve patient care. Our mission is to revolutionize the healthcare industry through cutting-edge technology and a commitment to excellence.</p>
+    <p>Founded in 2010, Mediconnect has since established itself as a leader in the field, working closely with healthcare providers to streamline processes, enhance efficiency, and ultimately deliver better outcomes for patients.</p>
+    <p>Our team consists of talented individuals from diverse backgrounds, all united by a passion for using technology to make a positive impact on people's lives. Whether it's developing groundbreaking software or implementing innovative systems, we are dedicated to pushing the boundaries of what's possible in healthcare.</p>
+  </section>
+
   <footer>
     <div class="container">
       <p>&copy; 2024 Mediconnect. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- JavaScript to toggle visibility of About Me section -->
+  <script>
+    function toggleAboutMe() {
+      var aboutMeSection = document.getElementById('about-me');
+      aboutMeSection.classList.toggle('active');
+    }
+  </script>
 </body>
+
 </html>
