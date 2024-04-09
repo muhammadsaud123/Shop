@@ -107,6 +107,7 @@
         <a href="#" onclick="toggleSection('team')">Team</a>
         <a href="#" onclick="toggleSection('careers')">Careers</a>
         <a href="#" onclick="toggleSection('data-analysis')">Data Analysis</a>
+        <a href="#" onclick="toggleSection('timeline')">Timeline</a>
     </nav>
     <section id="about" class="active">
        <h2>About Us</h2>
@@ -446,23 +447,31 @@
             const selectedChart = this.value;
             const allCharts = document.querySelectorAll('.chart-container canvas');
             allCharts.forEach(chart => {
-                if (chart.id === selectedChart) {
-                    chart.parentElement.style.display = 'block';
-                } else {
-                    chart.parentElement.style.display = 'none';
-                }
+                chart.style.display = 'none';
             });
+            document.getElementById(selectedChart).style.display = 'block';
         });
     </script>
 </section>
+    <section id="timeline">
+        <h2>Timeline</h2>
+        <p>Here is a timeline of key events in the history of Mediconnect:</p>
+        <ul>
+            <li><strong>2020:</strong> Mediconnect founded.</li>
+            <li><strong>2021:</strong> Secured first round of funding from venture capitalists.</li>
+            <li><strong>2022:</strong> Launched first healthcare data analysis software.</li>
+            <li><strong>2023:</strong> Expanded services to include telemedicine solutions.</li>
+            <li><strong>2024:</strong> Entered into strategic partnership with major hospital networks.</li>
+            <li><strong>2025:</strong> Planned launch of AI-powered healthcare assistant.</li>
+        </ul>
+    </section>
     <footer>
         <p>&copy; 2024 Mediconnect. All rights reserved.</p>
     </footer>
-
     <script>
         function toggleSection(sectionId) {
             // Hide all sections
-            document.querySelectorAll('section').forEach(function(section) {
+            document.querySelectorAll('section').forEach(section => {
                 section.classList.remove('active');
             });
 
