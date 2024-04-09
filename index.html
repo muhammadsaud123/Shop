@@ -162,38 +162,88 @@
     </div>
 </section>
     <section id="data-analysis">
-        <h2>Data Analysis</h2>
+       <h2>Data Analysis</h2>
 
     <!-- MRI Exam Modifier Bar Chart -->
-    <div>
-        <h3>MRI Exam Modifier Delay Analysis</h3>
-        <canvas id="mriChart" width="400" height="200"></canvas>
+    <div class="chart-container">
+        <h3>MRI Exam Modifier Delay Analysis (Bar Chart)</h3>
+        <canvas id="mriBarChart" width="300" height="150"></canvas>
+    </div>
+
+    <!-- MRI Exam Modifier Pie Chart -->
+    <div class="chart-container">
+        <h3>MRI Exam Modifier Delay Analysis (Pie Chart)</h3>
+        <canvas id="mriPieChart" width="300" height="150"></canvas>
+    </div>
+
+    <!-- CT Exam Modifier Bar Chart -->
+    <div class="chart-container">
+        <h3>CT Exam Modifier Delay Analysis (Bar Chart)</h3>
+        <canvas id="ctBarChart" width="300" height="150"></canvas>
     </div>
 
     <!-- CT Exam Modifier Pie Chart -->
-    <div>
+    <div class="chart-container">
         <h3>CT Exam Modifier Delay Analysis (Pie Chart)</h3>
-        <canvas id="ctPieChart" width="400" height="200"></canvas>
+        <canvas id="ctPieChart" width="300" height="150"></canvas>
     </div>
 
-    <!-- CT Exam Modifier Line Chart -->
     <div>
-        <h3>CT Exam Modifier Delay Analysis (Line Chart)</h3>
-        <canvas id="ctLineChart" width="400" height="200"></canvas>
+        <label for="chartSelect">Select Chart:</label>
+        <select id="chartSelect">
+            <option value="mriBarChart">MRI Bar Chart</option>
+            <option value="mriPieChart">MRI Pie Chart</option>
+            <option value="ctBarChart">CT Bar Chart</option>
+            <option value="ctPieChart">CT Pie Chart</option>
+        </select>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // MRI Exam Modifier Data
-        const mriData = {
+        // MRI Exam Modifier Bar Chart Data
+        const mriBarData = {
+            labels: ["MRABWW/URGENT", "MRBRA/URGENT", "MRBRA4/ROUT", "MRBRDF/URGENT", "MRBRSH/ROUT", "MRCP/STAT", "MRCP/URGENT", "MRCS/STAT", "MRHAL2/URGENT", "MRHAR2/URGENT", "MRKNR2/STAT"],
+            datasets: [{
+                label: 'Total Delay',
+                data: [872, 216, 210, 344, 134, 5, 884, 16, 133, 3934, 57],
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        // MRI Exam Modifier Pie Chart Data
+        const mriPieData = {
+            labels: ["MRABWW/URGENT", "MRBRA/URGENT", "MRBRA4/ROUT", "MRBRDF/URGENT", "MRBRSH/ROUT", "MRCP/STAT", "MRCP/URGENT", "MRCS/STAT", "MRHAL2/URGENT", "MRHAR2/URGENT", "MRKNR2/STAT"],
+            datasets: [{
+                data: [872, 216, 210, 344, 134, 5, 884, 16, 133, 3934, 57],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(255, 159, 64, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+
+        // CT Exam Modifier Bar Chart Data
+        const ctBarData = {
             labels: ["URGENT", "STAT", "ROUTE"],
             datasets: [{
                 label: 'Average Delay (Mins)',
                 data: [360.7, 137.4, 510],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)'
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -218,19 +268,6 @@
             }]
         };
 
-        // CT Exam Modifier Line Chart Data
-        const ctLineData = {
-            labels: ["CTHD1/STAT", "CTABP1/URGENT", "CTHD1/URGENT", "CTELR2/ROUT", "CTHD1/STAT", "CTAOT5/ROUT", "CTACHC/ROUT", "CTANWW/ROUT/CONTLINKED", "CTAHWW/ROUT", "CTAHWW/STAT", "CTCEPF/STAT/CONTLINKED", "CTHD1/URGENT", "CTHD1/URGENT", "CTHD1/STAT", "CTHD1/URGENT", "CTHD1/ROUT", "CTABP1/URGENT", "CTCXR1/ROUT", "CTCXPEW/STAT", "CTAABP/STAT", "CTABP1/ROUT", "CTHD1/STAT", "CTHD1/URGENT", "CTHD1/ROUT", "CTSPC1/STAT", "CTCXR1/STAT", "CTCXR1/ROUT", "CTABP1/STAT", "CTCXR4/ROUT", "CTENTER/URGENT", "CTCXR1/URGENT", "CTCXPEW/STAT", "CTABPWC/ROUT", "CTCXRWAP/ROUT", "CTAABP/STAT", "CTCXR1/URGENT", "CTAABP/STAT", "CTCXR1/URGENT", "CTEXL1/URGENT", "CTCXR1/URGENT"],
-            datasets: [{
-                label: 'Delays M',
-                data: [300, 117, 68.99999999, 103, 47.00000001, 1264, 1264, 481, 481, 30, 30, 304, 141, 45, 1438, 93, 93, 2.999999999, 92, 121, 1108, 16.99999999, 24, 8.999999998, 143, 11, 1042, 103, 430, 297, 136, 66.00000001, 1189, 1184, 232, 198, 146, 618, 272, 121],
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderWidth: 1,
-                fill: false
-            }]
-        };
-
         // Options
         const options = {
             scales: {
@@ -242,11 +279,44 @@
             }
         };
 
-        // Create MRI Chart
-        const mriCtx = document.getElementById('mriChart').getContext('2d');
-        const mriChart = new Chart(mriCtx, {
+        // Create MRI Bar Chart
+        const mriBarCtx = document.getElementById('mriBarChart').getContext('2d');
+        const mriBarChart = new Chart(mriBarCtx, {
             type: 'bar',
-            data: mriData,
+            data: mriBarData,
+            options: options
+        });
+
+        // Create MRI Pie Chart
+        const mriPieCtx = document.getElementById('mriPieChart').getContext('2d');
+        const mriPieChart = new Chart(mriPieCtx, {
+            type: 'pie',
+            data: mriPieData,
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            // Generate labels that include color information
+                            generateLabels: function(chart) {
+                                return chart.data.labels.map(function(label, i) {
+                                    const backgroundColor = chart.data.datasets[0].backgroundColor[i];
+                                    return {
+                                        text: label + ' (Color: ' + backgroundColor + ')',
+                                        fillStyle: backgroundColor
+                                    };
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Create CT Bar Chart
+        const ctBarCtx = document.getElementById('ctBarChart').getContext('2d');
+        const ctBarChart = new Chart(ctBarCtx, {
+            type: 'bar',
+            data: ctBarData,
             options: options
         });
 
@@ -275,12 +345,17 @@
             }
         });
 
-        // Create CT Line Chart
-        const ctLineCtx = document.getElementById('ctLineChart').getContext('2d');
-        const ctLineChart = new Chart(ctLineCtx, {
-            type: 'line',
-            data: ctLineData,
-            options: options
+        // Toggle Chart Visibility
+        document.getElementById('chartSelect').addEventListener('change', function() {
+            const selectedChart = this.value;
+            const allCharts = document.querySelectorAll('.chart-container canvas');
+            allCharts.forEach(chart => {
+                if (chart.id === selectedChart) {
+                    chart.style.display = 'block';
+                } else {
+                    chart.style.display = 'none';
+                }
+            });
         });
     </script>
 </section>
