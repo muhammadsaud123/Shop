@@ -454,7 +454,7 @@
     </script>
 </section>
     <section id="timeline">
-      <h2>Timeline</h2>
+   <h2>Timeline</h2>
     <div id="workflow">
         <h3>Group Meetings</h3>
         <ul class="date-list">
@@ -494,6 +494,36 @@
         <!-- Add more sections similarly -->
     </div>
 </section>
+
+<section id="workflow-chart">
+    <h2>Workflow Chart</h2>
+    <div class="workflow-container">
+        <div class="node">
+            <div class="circle">1</div>
+            <p>First Task</p>
+        </div>
+        <div class="arrow"></div>
+        <div class="node">
+            <div class="circle">2</div>
+            <p>Second Task</p>
+        </div>
+        <div class="arrow"></div>
+        <div class="node">
+            <div class="circle">3</div>
+            <p>Third Task</p>
+        </div>
+        <!-- Add more nodes and arrows as needed -->
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.date-list li').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var date = this.getAttribute('data-date');
+            alert('Tasks for ' + date + ': ' + this.innerText);
+        });
+    });
+</script>
 
 <section id="workflow-chart">
     <h2>Workflow Chart</h2>
