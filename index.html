@@ -108,7 +108,7 @@
         <a href="#" onclick="toggleSection('data-analysis')">Data Analysis</a>
     </nav>
     <section id="about" class="active">
-        <section id="about">
+    <section id="about">
     <h2>About Us</h2>
     <p>Mediconnect is a pioneering healthcare technology company dedicated to revolutionizing the healthcare industry. Founded in 2020, our mission is to bridge the gap between patients and providers by leveraging cutting-edge technologies. We partner with leading healthcare institutions like Northwell and Oracle Health to implement innovative solutions that enhance patient care, improve health outcomes, and increase accessibility to healthcare services for all individuals. Our team is committed to advancing healthcare accessibility and inclusivity through technology, ensuring that every patient receives the care they deserve.</p>
 
@@ -122,56 +122,9 @@
     <ul>
         <li>Total Revenue: $10 million</li>
         <li>Number of Clients: 50+</li>
-        <li>Time Saved: Over 100,000 hours</li>
     </ul>
-
-    <h3>Growth Over Time:</h3>
-    <div id="map" style="height: 400px;"></div>
 </section>
 
-<script>
-    function initMap() {
-        // Create a map centered at a specific location
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 4,
-            center: { lat: 37.0902, lng: -95.7129 }, // Centered at United States
-        });
-
-        // Add markers for each expansion location
-        const locations = [
-            { lat: 40.7128, lng: -74.0060, title: 'New York City' }, // Example: New York City
-            { lat: 34.0522, lng: -118.2437, title: 'Los Angeles' }, // Example: Los Angeles
-            // Add more locations as needed
-        ];
-
-        // Animate markers to show expansion
-        locations.forEach((location, index) => {
-            setTimeout(() => {
-                addMarkerWithAnimation(location, map);
-            }, index * 1000); // Add delay for animation effect
-        });
-    }
-
-    // Function to add marker with animation
-    function addMarkerWithAnimation(location, map) {
-        const marker = new google.maps.Marker({
-            position: location,
-            map: map,
-            title: location.title,
-            animation: google.maps.Animation.DROP
-        });
-
-        // Add listener to open info window when marker is clicked
-        const infowindow = new google.maps.InfoWindow({
-            content: location.title
-        });
-
-        marker.addListener("click", () => {
-            infowindow.open(map, marker);
-        });
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
 
     <section id="services">
         <h2>What We Provide</h2>
