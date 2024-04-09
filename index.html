@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mediconnect - Internship Opportunities</title>
   <link rel="stylesheet" href="styles.css"> <!-- Link to your custom CSS file for styling -->
   <style>
-    /* Reset CSS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* Define any additional styles here */
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
     }
 
     .container {
-      max-width: 1200px;
+      width: 80%;
       margin: 0 auto;
       padding: 20px;
     }
@@ -36,53 +32,65 @@
       font-size: 36px;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      background-color: #005fa1;
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-    }
-
-    nav a:hover {
-      background-color: #004c82;
-    }
-
-    .section {
-      padding: 40px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .internship-section {
-      background-color: #fff;
-    }
-
-    .about-company-section {
-      background-color: #f5f5f5;
-    }
-
     footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
+      background-color: #f4f4f4;
       padding: 20px 0;
+      text-align: center;
     }
 
     footer p {
       margin: 0;
     }
+
+    section {
+      padding: 20px 0;
+    }
+
+    .job {
+      margin-bottom: 40px;
+    }
+
+    h2,
+    h3 {
+      color: #0071bc;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #0071bc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00589c;
+    }
+
+    /* Style for the dropdown content */
+    .dropdown-content {
+      display: none;
+    }
+
+    .dropdown-content.active {
+      display: block;
+    }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -90,31 +98,54 @@
     </div>
   </header>
 
-  <nav>
-    <a href="#internships">Internships</a>
-    <a href="#about-company">About the Company</a>
-  </nav>
-
-  <div class="internship-section section" id="internships">
+  <section id="internships">
     <div class="container">
-      <h2 class="section-heading">Internship Opportunities</h2>
-      <!-- Internship opportunities content goes here -->
+      <h2>Internship Opportunities</h2>
+      <div class="job">
+        <h3>Project Manager Intern</h3>
+        <p>Description: Organization and follow-through are a big part of a project manager's role. From creating an accurate timeline of project completion to ensuring tasks are finished within the confines of the assignment, the project manager must remain aware of how the project is progressing.</p>
+        <p>Requirements: Proven experience in project management, excellent communication skills, ability to work in a team.</p>
+        <p>Average Salary: $50,000 per year</p>
+        <p>Starting Date: May 1, 2024</p>
+        <form action="#" method="post" enctype="multipart/form-data">
+          <label for="resume">Upload Resume:</label>
+          <input type="file" id="resume" name="resume">
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div class="job">
+        <h3>Project Designer Intern</h3>
+        <p>Description: Project</p>
+        <p>Requirements: Proficiency in design software, creative thinking, attention to detail.</p>
+        <p>Average Salary: $45,000 per year</p>
+        <p>Starting Date: May 15, 2024</p>
+        <form action="#" method="post" enctype="multipart/form-data">
+          <label for="resume">Upload Resume:</label>
+          <input type="file" id="resume" name="resume">
+          <input type="submit" value="Submit">
+        </form>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="about-company-section section" id="about-company">
-    <div class="container">
-      <h2 class="section-heading">About the Company</h2>
-      <!-- About the company content goes here -->
-    </div>
-  </div>
+  <section id="about-company" class="dropdown-content container">
+    <h2>About the Company</h2>
+    <p>Mediconnect is a leading healthcare technology company dedicated to improving patient care through innovative solutions.</p>
+  </section>
 
   <footer>
     <div class="container">
       <p>&copy; 2024 Mediconnect. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- JavaScript to toggle visibility of dropdown content -->
+  <script>
+    function toggleDropdown(id) {
+      var dropdownContent = document.getElementById(id);
+      dropdownContent.classList.toggle('active');
+    }
+  </script>
 </body>
+
 </html>
-
-
