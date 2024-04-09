@@ -93,51 +93,6 @@
             cursor: pointer;
         }
 
-        /* New styles for login and account creation forms */
-        .login-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 50px;
-        }
-
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .login-container input[type="text"],
-        .login-container input[type="password"],
-        .login-container input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            box-sizing: border-box;
-        }
-
-        .login-container input[type="submit"] {
-            width: 100%;
-            background-color: #4b0082;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .login-container input[type="submit"]:hover {
-            background-color: #6a0dad;
-        }
-
-        .login-container p {
-            margin-top: 15px;
-            text-align: center;
-        }
-
     </style>
 </head>
 <body>
@@ -154,31 +109,6 @@
         <a href="#" onclick="toggleSection('data-analysis')">Data Analysis</a>
         <a href="#" onclick="toggleSection('timeline')">Timeline</a>
     </nav>
-
-    <!-- Login form -->
-    <div class="login-container" id="login-container">
-        <h2>Login</h2>
-        <form id="login-form">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Login">
-        </form>
-        <p>Don't have an account? <a href="#" id="create-account-link">Create an account</a></p>
-    </div>
-
-    <!-- Account creation form (initially hidden) -->
-    <div class="login-container" id="create-account-container" style="display: none;">
-        <h2>Create Account</h2>
-        <form id="create-account-form">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirm-password" placeholder="Confirm Password" required>
-            <input type="submit" value="Create Account">
-        </form>
-        <p>Already have an account? <a href="#" id="login-link">Login</a></p>
-    </div>
-
     <section id="about" class="active">
        <h2>About Us</h2>
     <p>Mediconnect is a pioneering healthcare technology company dedicated to revolutionizing the healthcare industry. Founded in 2020, our mission is to bridge the gap between patients and providers by leveraging cutting-edge technologies. We partner with leading healthcare institutions like Northwell and Oracle Health to implement innovative solutions that enhance patient care, improve health outcomes, and increase accessibility to healthcare services for all individuals. Our team is committed to advancing healthcare accessibility and inclusivity through technology, ensuring that every patient receives the care they deserve.</p>
@@ -354,43 +284,289 @@
         <h3>CT Exam Modifier Delay Analysis (Pie Chart)</h3>
         <canvas id="ctPieChart" width="25" height="10"></canvas>
     </div>
+
+    <div>
+        <label for="chartSelect">Select Chart:</label>
+        <select id="chartSelect">
+            <option value="mriBarChart">MRI Bar Chart</option>
+            <option value="mriPieChart">MRI Pie Chart</option>
+            <option value="ctBarChart">CT Bar Chart</option>
+            <option value="ctPieChart">CT Pie Chart</option>
+        </select>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // MRI Exam Modifier Bar Chart Data
+        const mriBarData = {
+            labels: ["MRABWW/URGENT", "MRBRA/URGENT", "MRBRA4/ROUT", "MRBRDF/URGENT", "MRBRSH/ROUT", "MRCP/STAT", "MRCP/URGENT", "MRCS/STAT", "MRHAL2/URGENT", "MRHAR2/URGENT", "MRKNR2/STAT"],
+            datasets: [{
+                label: 'Total Delay',
+                data: [872, 216, 210, 344, 134, 5, 884, 16, 133, 3934, 57],
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        // MRI Exam Modifier Pie Chart Data
+        const mriPieData = {
+            labels: ["MRABWW/URGENT", "MRBRA/URGENT", "MRBRA4/ROUT", "MRBRDF/URGENT", "MRBRSH/ROUT", "MRCP/STAT", "MRCP/URGENT", "MRCS/STAT", "MRHAL2/URGENT", "MRHAR2/URGENT", "MRKNR2/STAT"],
+            datasets: [{
+                data: [872, 216, 210, 344, 134, 5, 884, 16, 133, 3934, 57],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)',
+                    'rgba(255, 159, 64, 0.5)',
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+
+        // CT Exam Modifier Bar Chart Data
+        const ctBarData = {
+            labels: ["URGENT", "STAT", "ROUTE"],
+            datasets: [{
+                label: 'Average Delay (Mins)',
+                data: [360.7, 137.4, 510],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // CT Exam Modifier Pie Chart Data
+        const ctPieData = {
+            labels: ["URGENT", "STAT", "ROUTE"],
+            datasets: [{
+                data: [4284, 420, 4443],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+
+        // Options
+        const options = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+
+        // Create MRI Bar Chart
+        const mriBarCtx = document.getElementById('mriBarChart').getContext('2d');
+        const mriBarChart = new Chart(mriBarCtx, {
+            type: 'bar',
+            data: mriBarData,
+            options: options
+        });
+
+        // Create MRI Pie Chart
+        const mriPieCtx = document.getElementById('mriPieChart').getContext('2d');
+        const mriPieChart = new Chart(mriPieCtx, {
+            type: 'pie',
+            data: mriPieData,
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            // Generate labels that include color information
+                            generateLabels: function(chart) {
+                                return chart.data.labels.map(function(label, i) {
+                                    const backgroundColor = chart.data.datasets[0].backgroundColor[i];
+                                    return {
+                                        text: label + ' (Color: ' + backgroundColor + ')',
+                                        fillStyle: backgroundColor
+                                    };
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Create CT Bar Chart
+        const ctBarCtx = document.getElementById('ctBarChart').getContext('2d');
+        const ctBarChart = new Chart(ctBarCtx, {
+            type: 'bar',
+            data: ctBarData,
+            options: options
+        });
+
+        // Create CT Pie Chart
+        const ctPieCtx = document.getElementById('ctPieChart').getContext('2d');
+        const ctPieChart = new Chart(ctPieCtx, {
+            type: 'pie',
+            data: ctPieData,
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            // Generate labels that include color information
+                            generateLabels: function(chart) {
+                                return chart.data.labels.map(function(label, i) {
+                                    const backgroundColor = chart.data.datasets[0].backgroundColor[i];
+                                    return {
+                                        text: label + ' (Color: ' + backgroundColor + ')',
+                                        fillStyle: backgroundColor
+                                    };
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Toggle Chart Visibility
+        document.getElementById('chartSelect').addEventListener('change', function() {
+            const selectedChart = this.value;
+            const allCharts = document.querySelectorAll('.chart-container canvas');
+            allCharts.forEach(chart => {
+                chart.style.display = 'none';
+            });
+            document.getElementById(selectedChart).style.display = 'block';
+        });
+    </script>
 </section>
     <section id="timeline">
-      <h2>Company Timeline</h2>
-    <p>2020: Mediconnect founded by a group of healthcare and technology enthusiasts.</p>
-    <p>2021: Partnered with Northwell Health to implement data analytics solutions.</p>
-    <p>2022: Launched patient portal for improved healthcare accessibility.</p>
-    <p>2023: Expanded services to include telemedicine platforms.</p>
-    <p>2024: Collaborated with Oracle Health for advanced data management solutions.</p>
+   <h2>Timeline</h2>
+    <div id="workflow">
+        <h3>Group Meetings</h3>
+        <ul class="date-list">
+            <li data-date="Thu 2/8/24"><strong>1st meeting:</strong> Thu 2/8/24</li>
+            <li data-date="Tue 2/13/24"><strong>2nd meeting:</strong> Tue 2/13/24</li>
+            <li data-date="Tue 2/20/24"><strong>3rd meeting:</strong> Tue 2/20/24</li>
+            <li data-date="Wed 2/28/24"><strong>4th meeting:</strong> Wed 2/28/24</li>
+            <li data-date="Tue 3/19/24"><strong>5th meeting:</strong> Tue 3/19/24</li>
+            <li data-date="Tue 3/26/24"><strong>6th meeting:</strong> Tue 3/26/24</li>
+            <li data-date="Tue 4/2/24"><strong>7th meeting:</strong> Tue 4/2/24</li>
+            <li data-date="Tue 4/9/24"><strong>8th meeting:</strong> Tue 4/9/24</li>
+            <li data-date="Tue 4/16/24"><strong>9th meeting:</strong> Tue 4/16/24</li>
+            <li data-date="Tue 4/23/24"><strong>Final meeting:</strong> Tue 4/23/24</li>
+        </ul>
+        <h3>Mediconnect Logo</h3>
+        <ul class="date-list">
+            <li data-date="Thu 2/8/24"><strong>1st design:</strong> Thu 2/8/24</li>
+            <li data-date="Tue 2/13/24"><strong>2nd design:</strong> Tue 2/13/24</li>
+            <li data-date="Wed 2/28/24"><strong>3rd design:</strong> Wed 2/28/24</li>
+            <li data-date="Tue 3/5/24"><strong>4th design (Final Design):</strong> Tue 3/5/24</li>
+        </ul>
+        <h3>Company and Team Profile</h3>
+        <ul class="date-list">
+            <li data-date="Tue 2/13/24"><strong>1st profile:</strong> Tue 2/13/24</li>
+            <li data-date="Tue 2/20/24"><strong>2nd profile:</strong> Tue 2/20/24</li>
+            <li data-date="Wed 2/28/24"><strong>3rd profile:</strong> Wed 2/28/24</li>
+            <li data-date="Tue 3/5/24"><strong>4th profile:</strong> Tue 3/5/24</li>
+            <li data-date="Tue 3/19/24"><strong>5th profile (Final):</strong> Tue 3/19/24</li>
+        </ul>
+        <h3>Presentation</h3>
+        <ul class="date-list">
+            <li data-date="Tue 3/19/24"><strong>Powerpoint background 1st draft:</strong> Tue 3/19/24</li>
+            <li data-date="Tue 3/26/24"><strong>Powerpoint draft 2:</strong> Tue 3/26/24</li>
+            <li data-date="Tue 4/2/24"><strong>Powerpoint draft 3:</strong> Tue 4/2/24</li>
+            <li data-date="Tue 4/9/24"><strong>Powerpoint Final draft:</strong> Tue 4/9/24</li>
+        </ul>
+        <!-- Add more sections similarly -->
+    </div>
 </section>
+
+<section id="workflow-chart">
+    <h2>Workflow Chart</h2>
+    <div class="workflow-container">
+        <div class="node">
+            <div class="circle">1</div>
+            <p>First Task</p>
+        </div>
+        <div class="arrow"></div>
+        <div class="node">
+            <div class="circle">2</div>
+            <p>Second Task</p>
+        </div>
+        <div class="arrow"></div>
+        <div class="node">
+            <div class="circle">3</div>
+            <p>Third Task</p>
+        </div>
+        <!-- Add more nodes and arrows as needed -->
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.date-list li').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var date = this.getAttribute('data-date');
+            alert('Tasks for ' + date + ': ' + this.innerText);
+        });
+    });
+</script>
+
+<section id="workflow-chart">
+    <h2>Workflow Chart</h2>
+    <div class="workflow-container">
+        <div class="node">
+            <div class="circle">1</div>
+            <p>First Task</p>
+        </div>
+        <div class="arrow"></div>
+        <div class="node">
+            <div class="circle">2</div>
+            <p>Second Task</p>
+        </div>
+        <div class="arrow"></div>
+        <div class="node">
+            <div class="circle">3</div>
+            <p>Third Task</p>
+        </div>
+        <!-- Add more nodes and arrows as needed -->
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.date-list li').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var date = this.getAttribute('data-date');
+            alert('Tasks for ' + date + ': ' + this.innerText);
+        });
+    });
+</script>
     <footer>
         <p>&copy; 2024 Mediconnect. All rights reserved.</p>
     </footer>
-
     <script>
-        // Function to toggle sections
         function toggleSection(sectionId) {
             // Hide all sections
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
+            document.querySelectorAll('section').forEach(section => {
                 section.classList.remove('active');
             });
+
             // Show the selected section
             document.getElementById(sectionId).classList.add('active');
         }
-
-        // Function to toggle between login and account creation forms
-        document.getElementById('create-account-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('login-container').style.display = 'none';
-            document.getElementById('create-account-container').style.display = 'block';
-        });
-
-        document.getElementById('login-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.getElementById('create-account-container').style.display = 'none';
-            document.getElementById('login-container').style.display = 'block';
-        });
     </script>
 </body>
 </html>
