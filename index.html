@@ -163,8 +163,75 @@
 </section>
     <section id="data-analysis">
         <h2>Data Analysis</h2>
-        <p>Unlock the power of data with our advanced analytics solutions tailored for healthcare providers.</p>
-    </section>
+    <div>
+        <canvas id="myChart" width="400" height="200"></canvas>
+    </div>
+    <div>
+        <label for="specialtySelect">Select Specialty:</label>
+        <select id="specialtySelect">
+            <option value="all">All</option>
+            <option value="BODY">BODY</option>
+            <option value="MSK">MSK</option>
+            <option value="NEURO">NEURO</option>
+        </select>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Data
+        const data = {
+            labels: ["BODY", "MSK", "NEURO"],
+            datasets: [{
+                label: 'Sum of Delay M',
+                data: [1761, 4124, 1006],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Options
+        const options = {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        };
+
+        // Create chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options
+        });
+
+        // Update chart based on selected specialty
+        document.getElementById('specialtySelect').addEventListener('change', function() {
+            const selectedSpecialty = this.value;
+            const updatedData = selectedSpecialty === 'all' ? data : {
+                labels: [selectedSpecialty],
+                datasets: data.datasets.map(dataset => ({
+                    ...dataset,
+                    data: [data.datasets[0].data[data.labels.indexOf(selectedSpecialty)]]
+                }))
+            };
+            myChart.data = updatedData;
+            myChart.update();
+        });
+    </script>
+</section>
     <footer>
         <p>&copy; 2024 Mediconnect. All rights reserved.</p>
     </footer>
