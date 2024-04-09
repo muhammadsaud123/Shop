@@ -1,151 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mediconnect - Internship Opportunities</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to your custom CSS file for styling -->
-  <style>
-    /* Define any additional styles here */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      width: 80%;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    header {
-      background-color: #0071bc;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
-
-    footer {
-      background-color: #f4f4f4;
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    footer p {
-      margin: 0;
-    }
-
-    section {
-      padding: 20px 0;
-    }
-
-    .job {
-      margin-bottom: 40px;
-    }
-
-    h2,
-    h3 {
-      color: #0071bc;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input[type="file"] {
-      margin-bottom: 10px;
-    }
-
-    input[type="submit"] {
-      background-color: #0071bc;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-      background-color: #00589c;
-    }
-
-    /* Style for the dropdown content */
-    .dropdown-content {
-      display: none;
-    }
-
-    .dropdown-content.active {
-      display: block;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mediconnect</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  header {
+    background-color: #6a0dad;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  nav {
+    background-color: #4b0082;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+</style>
 </head>
-
 <body>
   <header>
-    <div class="container">
-      <h1>Mediconnect Internship Opportunities</h1>
-    </div>
+    <h1>Mediconnect</h1>
+    <p>Your gateway to healthcare solutions</p>
   </header>
-
-  <section id="internships">
-    <div class="container">
-      <h2>Internship Opportunities</h2>
-      <div class="job">
-        <h3>Project Manager Intern</h3>
-        <p>Description: Organization and follow-through are a big part of a project manager's role. From creating an accurate timeline of project completion to ensuring tasks are finished within the confines of the assignment, the project manager must remain aware of how the project is progressing.</p>
-        <p>Requirements: Proven experience in project management, excellent communication skills, ability to work in a team.</p>
-        <p>Average Salary: $50,000 per year</p>
-        <p>Starting Date: May 1, 2024</p>
-        <form action="#" method="post" enctype="multipart/form-data">
-          <label for="resume">Upload Resume:</label>
-          <input type="file" id="resume" name="resume">
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-      <div class="job">
-        <h3>Project Designer Intern</h3>
-        <p>Description: Project</p>
-        <p>Requirements: Proficiency in design software, creative thinking, attention to detail.</p>
-        <p>Average Salary: $45,000 per year</p>
-        <p>Starting Date: May 15, 2024</p>
-        <form action="#" method="post" enctype="multipart/form-data">
-          <label for="resume">Upload Resume:</label>
-          <input type="file" id="resume" name="resume">
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-    </div>
+  <nav>
+    <a href="#about">About</a> |
+    <a href="#services">Services</a> |
+    <a href="#team">Team</a> |
+    <a href="#careers">Careers</a>
+  </nav>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Mediconnect. We are dedicated to revolutionizing healthcare through innovative technology solutions.</p>
   </section>
-
-  <section id="about-company" class="dropdown-content container">
-    <h2>About the Company</h2>
-    <p>Mediconnect is a leading healthcare technology company dedicated to improving patient care through innovative solutions.</p>
+  <section id="services">
+    <h2>What We Provide</h2>
+    <p>At Mediconnect, we offer cutting-edge solutions in healthcare data analysis, software development, and more.</p>
   </section>
-
+  <section id="team">
+    <h2>Meet the Team</h2>
+    <p>Our team consists of experienced professionals passionate about improving healthcare worldwide.</p>
+  </section>
+  <section id="careers">
+    <h2>Careers</h2>
+    <h3>Internship Opportunities</h3>
+    <p>We currently have openings for:</p>
+    <ul>
+      <li>Project Manager Internship</li>
+      <li>Frontend Development Internship</li>
+      <li>Backend Development Internship</li>
+    </ul>
+  </section>
+  <section id="data-analysis">
+    <h2>Data Analysis</h2>
+    <p>Unlock the power of data with our advanced analytics solutions tailored for healthcare providers.</p>
+  </section>
   <footer>
-    <div class="container">
-      <p>&copy; 2024 Mediconnect. All rights reserved.</p>
-    </div>
+    <p>&copy; 2024 Mediconnect. All rights reserved.</p>
   </footer>
-
-  <!-- JavaScript to toggle visibility of dropdown content -->
-  <script>
-    function toggleDropdown(id) {
-      var dropdownContent = document.getElementById(id);
-      dropdownContent.classList.toggle('active');
-    }
-  </script>
 </body>
-
 </html>
