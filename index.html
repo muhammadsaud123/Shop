@@ -10,13 +10,13 @@
 <body>
   <header>
     <nav>
-      <div class="logo">MedAidWear</div>
+      <div class="logo">
+        <a href="#"><img src="logo.png" alt="MedAidWear"></a>
+      </div>
       <ul>
-        <li><a href="#">Home</a></li>
         <li><a href="#">Shop</a></li>
-        <li><a href="#">Our Mission</a></li>
-        <li><a href="#">Heroes in Scrubs</a></li>
-        <li><a href="#">Donate</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Healthcare Heroes</a></li>
       </ul>
       <div class="cart-icon">
         <i class="fas fa-shopping-cart"></i>
@@ -27,15 +27,28 @@
 
   <main>
     <section class="hero">
-      <h1>Wear Care, Share Care</h1>
-      <p>Clothing Compassion, Healing the World</p>
-      <a href="#" class="btn">Shop Now</a>
+      <div class="hero-content">
+        <h1>Wear Care, Share Care</h1>
+        <p>Clothing Compassion, Healing the World</p>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
     </section>
 
     <section class="featured-products">
       <h2>Featured Products</h2>
       <div class="product-grid">
         <!-- Product cards will be dynamically generated here -->
+      </div>
+    </section>
+
+    <section class="our-story">
+      <div class="story-content">
+        <h2>Our Story</h2>
+        <p>At MedAidWear, we believe in the power of compassion and the importance of accessible healthcare for all. With every purchase, a portion of the proceeds goes towards supporting those in need of medical assistance and paying off medical bills.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+      <div class="story-image">
+        <img src="story-image.jpg" alt="Our Story">
       </div>
     </section>
 
@@ -53,7 +66,7 @@
           <form id="guestbook-form">
             <input type="text" id="name" placeholder="Your Name" required>
             <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Submit</button>
+            <button type="submit" class="btn">Submit</button>
           </form>
           <div id="guestbook-entries"></div>
         </div>
@@ -71,9 +84,32 @@
   </main>
 
   <footer>
-    <p>&copy; MedAidWear</p>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="logo.png" alt="MedAidWear">
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Healthcare Heroes</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; MedAidWear</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
