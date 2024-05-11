@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareWear - Quality Scrubs, Caring Hearts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>CareWear</h1>
+            <p>Quality Scrubs, Caring Hearts</p>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#charity">Charity</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle">&#9776;</button>
+    </header>
+
+    <section id="home" class="home-section">
+        <div class="content">
+            <h1>Welcome to <span class="accent">CareWear</span></h1>
+            <p class="tagline">Where Every Purchase Makes a Difference</p>
+            <p class="mission">For every dollar spent, we donate $1 to support individuals in need of medical assistance.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Other sections like products, charity, blog, about, and contact can be added here -->
+
+    <footer class="footer">
+        <p>&copy; 2024 CareWear. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
