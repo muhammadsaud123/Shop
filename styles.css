@@ -1,17 +1,128 @@
-/* Existing styles... */
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .btn {
   display: inline-block;
-  background-color: #333;
+  background-color: #007bff;
   color: #fff;
-  text-decoration: none;
   padding: 0.8rem 1.6rem;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #555;
+  background-color: #0056b3;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 40px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 2rem;
+}
+
+nav ul li a {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #007bff;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Featured Products Section */
+.featured-products {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-products h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .product-grid {
@@ -32,17 +143,62 @@
   height: auto;
 }
 
+/* Our Story Section */
+.our-story {
+  background-color: #f8f9fa;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.story-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.story-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.story-image {
+  flex: 1;
+}
+
+.story-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Heroes in Scrubs Section */
+.heroes-in-scrubs {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroes-in-scrubs h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
 .hero-spotlight {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .thank-you-message {
-  background-color: #f4f4f4;
+  background-color: #f8f9fa;
   padding: 2rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .interactive-features {
@@ -71,16 +227,8 @@
   padding: 0.5rem;
 }
 
-.guestbook button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
 .guestbook-entry {
-  background-color: #f4f4f4;
+  background-color: #f8f9fa;
   padding: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -97,18 +245,47 @@
   height: auto;
 }
 
-.cart-icon {
-  position: relative;
-  cursor: pointer;
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
 }
 
-.cart-count {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: #ff4d4d;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-links ul,
+.footer-social ul {
+  display: flex;
+  list-style: none;
+}
+
+.footer-links ul li,
+.footer-social ul li {
+  margin-left: 1rem;
+}
+
+.footer-social ul li a {
   color: #fff;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 12px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social ul li a:hover {
+  color: #007bff;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 1rem;
 }
