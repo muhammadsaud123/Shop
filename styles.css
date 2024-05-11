@@ -112,7 +112,6 @@ nav ul li a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
 }
 
 .hero-content {
@@ -122,11 +121,13 @@ nav ul li a:hover {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #000;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color: #000;
 }
 
 /* Featured Products Section */
@@ -138,6 +139,7 @@ nav ul li a:hover {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
+  color: #000;
 }
 
 .product-grid {
@@ -178,6 +180,7 @@ nav ul li a:hover {
 .story-content h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #000;
 }
 
 .story-image {
@@ -198,6 +201,7 @@ nav ul li a:hover {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
+  color: #000;
 }
 
 .hero-spotlight {
@@ -213,6 +217,7 @@ nav ul li a:hover {
   padding: 2rem;
   margin-bottom: 2rem;
   text-align: center;
+  color: #000;
 }
 
 .interactive-features {
@@ -245,6 +250,7 @@ nav ul li a:hover {
   background-color: #f8f9fa;
   padding: 1rem;
   margin-bottom: 0.5rem;
+  color: #000;
 }
 
 .uploaded-file {
