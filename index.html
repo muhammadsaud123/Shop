@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
+    <header>
         <div class="logo">
             <h1>CareWear</h1>
             <p>Quality Scrubs, Caring Hearts</p>
         </div>
-        <nav class="nav-menu">
-            <ul>
+        <nav>
+            <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
                 <li><a href="#charity">Charity</a></li>
@@ -21,22 +21,50 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="nav-toggle">&#9776;</button>
         </nav>
-        <button class="nav-toggle">&#9776;</button>
     </header>
 
-    <section id="home" class="home-section">
-        <div class="content">
+    <main>
+        <section id="home" class="home-section">
             <h1>Welcome to <span class="accent">CareWear</span></h1>
             <p class="tagline">Where Every Purchase Makes a Difference</p>
             <p class="mission">For every dollar spent, we donate $1 to support individuals in need of medical assistance.</p>
             <a href="#products" class="btn">Shop Now</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Other sections like products, charity, blog, about, and contact can be added here -->
+        <section id="products" class="product-section">
+            <h2>Featured Products</h2>
+            <!-- Product items will be dynamically loaded here -->
+        </section>
 
-    <footer class="footer">
+        <section id="charity" class="charity-section">
+            <h2>Our Charity Work</h2>
+            <p>We are committed to helping those in need. Learn more about our initiatives and how you can contribute.</p>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <h2>Latest From Our Blog</h2>
+            <!-- Blog posts will be dynamically loaded here -->
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>Learn more about our mission, our team, and our story.</p>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
         <p>&copy; 2024 CareWear. All rights reserved.</p>
     </footer>
     
