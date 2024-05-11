@@ -1,31 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareWear - Quality Scrubs, Caring Hearts</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedAidWear - Wear Care, Share Care</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>CareWear</h1>
-            <p>Quality Scrubs, Caring Hearts</p>
+  <header>
+    <nav>
+      <div class="logo">MedAidWear</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Our Mission</a></li>
+        <li><a href="#">Heroes in Scrubs</a></li>
+        <li><a href="#">Donate</a></li>
+      </ul>
+      <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Wear Care, Share Care</h1>
+      <p>Clothing Compassion, Healing the World</p>
+      <a href="#" class="btn">Shop Now</a>
+    </section>
+
+    <section class="featured-products">
+      <h2>Featured Products</h2>
+      <div class="product-grid">
+        <!-- Product cards will be dynamically generated here -->
+      </div>
+    </section>
+
+    <section class="heroes-in-scrubs">
+      <h2>Heroes in Scrubs</h2>
+      <div class="hero-spotlight">
+        <!-- Healthcare worker spotlight will be dynamically generated here -->
+      </div>
+      <div class="thank-you-message">
+        <p>To all the nurses, doctors, and healthcare professionals working tirelessly on the front lines - thank you for your courage, compassion, and unwavering dedication to saving lives. You are the true heroes.</p>
+      </div>
+      <div class="interactive-features">
+        <div class="guestbook">
+          <h3>Leave a Thank You Note</h3>
+          <form id="guestbook-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+          </form>
+          <div id="guestbook-entries"></div>
         </div>
-        <button class="nav-toggle" aria-label="toggle navigation">&#9776;</button>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#charity">Charity</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Additional content here -->
-    <script src="script.js"></script>
+        <div class="photo-upload">
+          <h3>Share Photos/Videos</h3>
+          <input type="file" id="file-input" accept="image/*,video/*" multiple>
+          <div id="uploaded-files"></div>
+        </div>
+        <div class="social-feed">
+          <h3>#HealthcareHeroes</h3>
+          <!-- Social media feed will be embedded here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; MedAidWear</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
