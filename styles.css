@@ -1,49 +1,114 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Existing styles... */
+
+.btn {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    line-height: 1.6;
+.btn:hover {
+  background-color: #555;
 }
 
-header {
-    background: #fff;
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-.logo h1 {
-    color: #007BFF;
+.product-card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
 }
 
-.nav-menu {
-    display: none;
-    list-style: none;
+.product-card img {
+  max-width: 100%;
+  height: auto;
 }
 
-.nav-menu li a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 20px;
-    display: block;
+.hero-spotlight {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
-.nav-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
+.thank-you-message {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* Display the menu when .nav-menu is active */
-.nav-menu.active {
-    display: block;
+.interactive-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.guestbook,
+.photo-upload,
+.social-feed {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.guestbook form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.guestbook input,
+.guestbook textarea {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+.guestbook button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.guestbook-entry {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.uploaded-file {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.uploaded-file img,
+.uploaded-file video {
+  max-width: 100%;
+  height: auto;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
 }
