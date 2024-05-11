@@ -1,45 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareWear - Quality Scrubs, Caring Hearts</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header class="header">
-        <div class="logo">
-            <h1>CareWear</h1>
-            <p>Quality Scrubs, Caring Hearts</p>
-        </div>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#charity">Charity</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <button class="nav-toggle">&#9776;</button>
-    </header>
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <section id="home" class="home-section">
-        <div class="content">
-            <h1>Welcome to <span class="accent">CareWear</span></h1>
-            <p class="tagline">Where Every Purchase Makes a Difference</p>
-            <p class="mission">For every dollar spent, we donate $1 to support individuals in need of medical assistance.</p>
-            <a href="#products" class="btn">Shop Now</a>
-        </div>
-    </section>
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
 
-    <!-- Other sections like products, charity, blog, about, and contact can be added here -->
+header {
+    background: #fff;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-    <footer class="footer">
-        <p>&copy; 2024 CareWear. All rights reserved.</p>
-    </footer>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+.logo h1 {
+    color: #007BFF;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    display: block;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.main {
+    padding: 50px 10%;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 10%;
+    background-color: #f8f8f8;
+}
