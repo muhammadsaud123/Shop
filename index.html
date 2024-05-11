@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MedAidWear - Wear Care, Share Care</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,78 +32,86 @@
       <div class="hero-content">
         <h1>Wear Care, Share Care</h1>
         <p>Clothing Compassion, Healing the World</p>
-        <a href="#" class="btn">Shop Now</a>
+        <a href="#" class="btn btn-primary">Shop Now</a>
       </div>
     </section>
 
     <section class="featured-products">
-      <h2>Featured Products</h2>
-      <div class="product-grid">
-        <!-- Product cards will be dynamically generated here -->
+      <div class="container">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+          <!-- Product cards will be dynamically generated here -->
+        </div>
       </div>
     </section>
 
     <section class="our-story">
-      <div class="story-content">
-        <h2>Our Story</h2>
-        <p>At MedAidWear, we believe in the power of compassion and the importance of accessible healthcare for all. With every purchase, a portion of the proceeds goes towards supporting those in need of medical assistance and paying off medical bills.</p>
-        <a href="#" class="btn">Learn More</a>
-      </div>
-      <div class="story-image">
-        <img src="story-image.jpg" alt="Our Story">
+      <div class="container">
+        <div class="story-content">
+          <h2>Our Story</h2>
+          <p>At MedAidWear, we believe in the power of compassion and the importance of accessible healthcare for all. With every purchase, a portion of the proceeds goes towards supporting those in need of medical assistance and paying off medical bills.</p>
+          <a href="#" class="btn btn-secondary">Learn More</a>
+        </div>
+        <div class="story-image">
+          <img src="story-image.jpg" alt="Our Story">
+        </div>
       </div>
     </section>
 
     <section class="heroes-in-scrubs">
-      <h2>Heroes in Scrubs</h2>
-      <div class="hero-spotlight">
-        <!-- Healthcare worker spotlight will be dynamically generated here -->
-      </div>
-      <div class="thank-you-message">
-        <p>To all the nurses, doctors, and healthcare professionals working tirelessly on the front lines - thank you for your courage, compassion, and unwavering dedication to saving lives. You are the true heroes.</p>
-      </div>
-      <div class="interactive-features">
-        <div class="guestbook">
-          <h3>Leave a Thank You Note</h3>
-          <form id="guestbook-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Submit</button>
-          </form>
-          <div id="guestbook-entries"></div>
+      <div class="container">
+        <h2>Heroes in Scrubs</h2>
+        <div class="hero-spotlight">
+          <!-- Healthcare worker spotlight will be dynamically generated here -->
         </div>
-        <div class="photo-upload">
-          <h3>Share Photos/Videos</h3>
-          <input type="file" id="file-input" accept="image/*,video/*" multiple>
-          <div id="uploaded-files"></div>
+        <div class="thank-you-message">
+          <p>To all the nurses, doctors, and healthcare professionals working tirelessly on the front lines - thank you for your courage, compassion, and unwavering dedication to saving lives. You are the true heroes.</p>
         </div>
-        <div class="social-feed">
-          <h3>#HealthcareHeroes</h3>
-          <!-- Social media feed will be embedded here -->
+        <div class="interactive-features">
+          <div class="guestbook">
+            <h3>Leave a Thank You Note</h3>
+            <form id="guestbook-form">
+              <input type="text" id="name" placeholder="Your Name" required>
+              <textarea id="message" placeholder="Your Message" required></textarea>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div id="guestbook-entries"></div>
+          </div>
+          <div class="photo-upload">
+            <h3>Share Photos/Videos</h3>
+            <input type="file" id="file-input" accept="image/*,video/*" multiple>
+            <div id="uploaded-files"></div>
+          </div>
+          <div class="social-feed">
+            <h3>#HealthcareHeroes</h3>
+            <!-- Social media feed will be embedded here -->
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <img src="logo.png" alt="MedAidWear">
-      </div>
-      <div class="footer-links">
-        <ul>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Our Story</a></li>
-          <li><a href="#">Healthcare Heroes</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        </ul>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="logo.png" alt="MedAidWear">
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Healthcare Heroes</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="copyright">
